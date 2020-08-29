@@ -2,7 +2,7 @@ from utils import loadPickle
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from collections import Counter
-celebs, celeb_encodings = loadPickle('/content/drive/My Drive/Datasets/Show_Segmentation_2020/final_celeb_detection/final_pickles/anchors-with-TV-encodings.pickle')
+celebs, celeb_encodings = loadPickle('Show-Segmentation-2020/final_celeb_detection/final_pickles/anchors-with-TV-encodings.pickle')
 celeb_encodings = np.array([np.array(x) for x in celeb_encodings])
 
 # Populating KNN space with labelled encodings
