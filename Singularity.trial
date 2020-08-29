@@ -2,19 +2,22 @@ Bootstrap:docker
 From:ubuntu:16.04  
 
 %labels
-MAINTAINER nitesh-mahawar
-
+        MAINTAINER Nitesh Mahawar
 
 %environment
-RAWR_BASE=/code
-export RAWR_BASE
-
-%runscript
-echo "This is singularity with tag"
-exec /bin/bash /code/rawr.sh "$@"  
+        export LANGUAGE=en_US.UTF-8
+        export LANG=en_US.UTF-8
+        export LC_ALL=en_US.UTF-8
 
 %post  
-echo "This section happens once after bootstrap to build the image."  
-mkdir -p /code  
-echo "RoooAAAAR" >> /code/rawr.sh
-chmod u+x /code/rawr.sh 
+        apt-get update
+        apt-get install -y python3
+        apt-get install -y python3-pip
+        pip3 install  numpy
+        pip3 install scikit-learn
+        pip3 install  pandas
+        pip3 install  dlib
+        pip3 install opencv-python
+        pip3 install face_recognition
+        pip3 install matplotlib
+        pip3 install wikipedia
