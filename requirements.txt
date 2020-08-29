@@ -1,0 +1,7 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+opencv-python
+face_recognition
+wikipedia
