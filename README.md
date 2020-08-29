@@ -22,16 +22,23 @@ pip install -r requirements.txt
 ```bash
 Show-Segmentation-2020/final_celeb_detection/final_pickles/anchors-with-TV-encodings.pickle
 ```
-
-4. Navigate to ShowSegmentation/final_usable_code/
+4. Download the <a href="https://drive.google.com/drive/folders/1LpbtUeRHRcEW7Avf4_y_jphe7i-Z0JKU?usp=sharing">IMDB Datasets</a> and place it in this location.
+```bash
+Show-Segmentation-2020/IMDB_Datasets/name.basics.tsv
+Show-Segmentation-2020/IMDB_Datasets/title.basics.tsv
+Show-Segmentation-2020/IMDB_Datasets/title.principals.tsv
+Show-Segmentation-2020/IMDB_Datasets/name.akas.tsv
+Show-Segmentation-2020/IMDB_Datasets/name.crew.tsv
+```
+5. Navigate to ShowSegmentation/final_usable_code/
 ```bash
 cd Show-Segmentation-2020/final_usable_code
 ```
-5. segment_video.py takes 3 inputs, the path to the input video, path to the output location and a flag --verbose.
+6. segment_video.py takes 3 inputs, the path to the input video, path to the output location and a flag --verbose.
 ```python
 python3 segment_video.py path/to/input/video.mp4 path/to/store/output --verbose
 ```
-6. Make sure that the input video's name follows RedHenLab's Rosenthal dataset's format. Here's an example
+7. Make sure that the input video's name follows RedHenLab's Rosenthal dataset's format. Here's an example
 ```
 1980-06-03_0000_US_00020088_V0_U2_M9_EG1_DB.mp4
 ```
