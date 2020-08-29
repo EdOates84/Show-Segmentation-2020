@@ -12,11 +12,11 @@ DISAMBIGUATION_ERROR = 'disambiguation'
 NETWORK_TYPES = ['FOX','ABC','CBS','NBC','CNN','United Paramount Net','Warner Bros.','Pure Independent','PBS','Pax TV','Telemundo']
 REGION_TYPE = 'US'
 SHOW_NOT_IN_IMDB = 'Show is not present in IMDb'
-NAME_BASICS = "/content/drive/My Drive/Datasets/name.basics.tsv/data.tsv"
-TITLE_BASICS = "/content/drive/My Drive/Datasets/title.basics.tsv/data.tsv"
-TITLE_PRINCIPALS = "/content/drive/My Drive/Datasets/title.principals.tsv.gz"
-TITLE_AKAS = "/content/drive/My Drive/Datasets/title.akas.tsv/data.tsv"
-TITLE_CREW = "/content/drive/My Drive/Datasets/title.crew.tsv/data.tsv "
+NAME_BASICS = "IMDB_Datasets/name.basics.tsv/data.tsv"
+TITLE_BASICS = "IMDB_Datasets/title.basics.tsv/data.tsv"
+TITLE_PRINCIPALS = "IMDB_Datasets/title.principals.tsv/data.tsv"
+TITLE_AKAS = "IMDB_Datasets/title.akas.tsv/data.tsv"
+TITLE_CREW = "IMDB_Datasets/title.crew.tsv/data.tsv "
 Read_Namebasics = pd.read_table(NAME_BASICS, sep='\t')
 
 """ After getting all professions of a person we can easily confirm that
