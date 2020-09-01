@@ -88,3 +88,8 @@ singularity exec -B /mnt ../show_segmentation_2020.img python3 segment_video.py 
 singularity exec -B /mnt ../show_segmentation_2020.img python3 segment_Rosenthal.py
 ```
 Please raise an issue if you run into any errors.
+
+## Future work
+* If possible, replace the current celeb detection method with Azure’s Computer Vision service.
+* Currently the most time consuming process in the program is that of going frame by frame and extracting faces. This can be speed up using multi-threading or any other means possible.
+* Explore clustering process and see how to speed up this.
