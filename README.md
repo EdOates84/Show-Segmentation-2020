@@ -49,11 +49,11 @@ python3 segment_video.py path/to/input/video.mp4 path/to/store/output --verbose
 1. Connect to the <a href="https://vpnsetup.case.edu/">CWR VPN</a>.
 2. Login to the cluster using your CWR ID and your credentials. Example:
 ```bash
-ssh abc12@rider.case.edu
+ssh abc123@rider.case.edu
 ```
 3. Navigate to the project's location on the cluster.
 ```bash
-cd /mnt/rds/redhen/gallina/Singularity/Show_Segmentation_2020/Show_Segmentation-2020
+cd /mnt/rds/redhen/gallina/Singularity/Show_Segmentation_2020/final_usable_code
 ```
 4. Request a computing node using
 ```bash
@@ -61,7 +61,7 @@ srun --mem=16gb --pty /bin/bash
 ```
 5. Load <a href="http://singularity.lbl.gov/">singularity</a> 2.5.1 to your environment using
 ```bash
-module load singularity/2.5.1
+module load singularity
 ```
 6. I have made <a href="https://github.com/EdOates84/Show-Segmentation-2020/blob/master/final_usable_code/segment_video.py">segment_video.py</a> for <b>testing</b> and <a href="https://github.com/EdOates84/Show-Segmentation-2020/blob/master/final_usable_code/segment_Rosenthal.py">segment_Rosenthal.py</a> for final <b>production</b>. After setup, read the Testing section or the Production section according to the requirement.
 
@@ -72,12 +72,12 @@ module load singularity/2.5.1
 *  ```--verbose``` (an optional flag which will make the program print progress statements like 'done extracting faces', 'done clustering faces' etc.)
 2. The main command is of the form
 ```bash
-singularity exec -B /mnt ../segmentation_production.simg python3 segment_video.py {INPUT_VIDEO_PATH} {OUTPUT_PATH} {--verbose}
+singularity exec -B /mnt ../show_segmentation_2020.img python3 segment_video.py {INPUT_VIDEO_PATH} {OUTPUT_PATH} {--verbose}
 ```
 3. The Rosenthal dataset is present at ```/mnt/rds/redhen/gallina/Rosenthal```, we can take some video file from this as our input.
 4. An example command for the file ```1998-01/1998-01-01/1998-01-01_0000_US_00019495_V3_VHS50_MB20_H17_WR.mp4``` is
 ```bash
-singularity exec -B /mnt ../segmentation_production.simg python3 segment_video.py /mnt/rds/redhen/gallina/Rosenthal/1998/1998-01/1998-01-01/1998-01-01_0000_US_00019495_V3_VHS50_MB20_H17_WR.mp4 mnt/path/to/output/directory --verbose
+singularity exec -B /mnt ../show_segmentation_2020.img python3 segment_video.py /mnt/rds/redhen/gallina/Rosenthal/1998/1998-01/1998-01-01/1998-01-01_0000_US_00019495_V3_VHS50_MB20_H17_WR.mp4 mnt/path/to/output/directory --verbose
 ```
 
 ### Production
@@ -85,6 +85,6 @@ singularity exec -B /mnt ../segmentation_production.simg python3 segment_video.p
 2. ```--verbose``` flag mentioned earlier is set to False by default for production.
 3. Run the script using
 ```bash
-singularity exec -B /mnt ../segmentation_production.simg python3 segment_Rosenthal.py
+singularity exec -B /mnt ../show_segmentation_2020.img python3 segment_Rosenthal.py
 ```
 Please raise an issue if you run into any errors.
